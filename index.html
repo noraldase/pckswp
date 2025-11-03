@@ -1,4 +1,4 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -110,18 +110,18 @@
           </div>
         </a>
 
-        <!-- Navigasi (Hanya Swap yang aktif) -->
+        <!-- Navigasi (Sekarang Fungsional) -->
         <nav class="hidden lg:flex items-center gap-2">
-          <a href="#" class="flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 text-white shadow-lg">
+          <button id="nav-swap-button" class="nav-button flex items-center gap-2 px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 text-white shadow-lg">
             <!-- Icon Swap -->
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"></path></svg>
             <span class="font-medium">Swap</span>
-          </a>
-          <a href="#" class="flex items-center gap-2 px-4 py-2 rounded-xl text-gray-300 hover:text-white hover:bg-white/10">
+          </button>
+          <button id="nav-dashboard-button" class="nav-button flex items-center gap-2 px-4 py-2 rounded-xl text-gray-300 hover:text-white hover:bg-white/10">
              <!-- Icon Dashboard -->
             <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 12a9 9 0 1 1 18 0 9 9 0 0 1-18 0ZM12 8.25v7.5M8.25 12h7.5"></path></svg>
             <span class="font-medium">Dashboard</span>
-          </a>
+          </button>
         </nav>
 
         <!-- Tombol Connect Wallet -->
@@ -135,11 +135,12 @@
   </header>
 
   <!-- ====================================================== -->
-  <!-- 3. KONTEN UTAMA (dari swap-page.html)                   -->
+  <!-- 3. KONTEN UTAMA (Container untuk Halaman)            -->
   <!-- ====================================================== -->
   <main class="relative z-10 container mx-auto px-4 py-8">
     
-    <div class="max-w-md mx-auto pt-8">
+    <!-- ================= HALAMAN SWAP (dari swap-page.html) ================= -->
+    <div id="swap-page" class="max-w-md mx-auto pt-8">
       <!-- Stats Banner -->
       <div class="grid grid-cols-3 gap-4 mb-8">
         <div class="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 backdrop-blur-xl p-4 text-center rounded-2xl">
@@ -161,14 +162,14 @@
         <div class="flex items-center justify-between mb-6">
           <h2 class="text-2xl font-bold text-white">Swap</h2>
           <div class="flex items-center gap-2">
-            <div class="flex items-center gap-1 px-3 py-1 bg-green-500/20 rounded-full border border-green-500/30">
+            <div id="gasless-badge" class="flex items-center gap-1 px-3 py-1 bg-green-500/20 rounded-full border border-green-500/30">
               <!-- Icon Gasless (Zap) -->
               <svg class="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"></path></svg>
               <span class="text-sm text-green-400 font-medium">Gasless</span>
             </div>
             <!-- Settings Button -->
             <button class="text-gray-400 hover:text-white p-2 rounded-lg hover:bg-white/10">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.108 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.11v1.093c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.108 1.204l.527.738c.32.447.27.96-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.78.93l-.15.893c-.09.543-.56.94-1.11.94h-1.094c-.55 0-1.019-.397-1.11-.94l-.149-.893c-.07-.425-.383-.765-.78-.93-.398-.165-.854-.143-1.204.108l-.738.527c-.447.32-.96.27-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25-.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.11v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.527-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.108.397-.165.71-.505.78-.93l.149-.893Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path></svg>
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.343 3.94c.09-.542.56-.94 1.11-.94h1.093c.55 0 1.02.398 1.11.94l.149.894c.07.424.384.764.78.93.398.164.855.142 1.205-.108l.737-.527a1.125 1.125 0 0 1 1.45.12l.773.774c.39.389.44 1.002.12 1.45l-.527.737c-.25.35-.272.806-.108 1.204.165.397.505.71.93.78l.893.15c.543.09.94.56.94 1.11v1.093c0 .55-.397 1.02-.94 1.11l-.893.149c-.425.07-.765.383-.93.78-.165.398-.143.854.108 1.204l.527.738c.32.447.27.96-.12 1.45l-.774.773a1.125 1.125 0 0 1-1.449.12l-.738-.527c-.35-.25-.806-.272-1.203-.107-.397.165-.71.505-.78.93l-.15.893c-.09.543-.56.94-1.11.94h-1.094c-.55 0-1.019-.397-1.11-.94l-.149-.893c-.07-.425-.383-.765-.78-.93-.398-.165-.854-.143-1.204.108l-.738.527c-.447.32-.96.27-1.45-.12l-.773-.774a1.125 1.125 0 0 1-.12-1.45l.527-.737c.25.35.272-.806.108-1.204-.165-.397-.506-.71-.93-.78l-.894-.15c-.542-.09-.94-.56-.94-1.11v-1.094c0-.55.398-1.02.94-1.11l.894-.149c.424-.07.765-.383.93-.78.165-.398.143-.854-.108-1.204l-.527-.738a1.125 1.125 0 0 1 .12-1.45l.773-.773a1.125 1.125 0 0 1 1.45-.12l.737.527c.35.25.807.272 1.204.108.397-.165.71-.505.78-.93l.149-.893Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"></path></svg>
             </button>
           </div>
         </div>
@@ -212,6 +213,7 @@
                 type="number"
                 placeholder="0.0"
                 id="to-amount-input"
+                disabled
                 class="flex-1 bg-transparent border-none text-3xl font-bold text-white placeholder:text-gray-600 focus-visible:ring-0 focus:outline-none"
               >
               <button id="to-token-button" class="h-auto px-3 py-2 hover:bg-white/10 text-white rounded-lg">
@@ -237,16 +239,12 @@
             </div>
             <div class="space-y-2 text-sm">
               <div class="flex justify-between text-gray-400">
-                <span>Price Impact</span>
-                <span class="text-green-400" id="price-impact-text">{"<0.01%"}</span>
-              </div>
-              <div class="flex justify-between text-gray-400">
                 <span>Minimum Received</span>
                 <span class="text-white" id="price-min-received-text">0.00 ?</span>
               </div>
               <div class="flex justify-between text-gray-400">
-                <span>Trading Fee</span>
-                <span class="text-white">FREE (Gasless)</span>
+                <span id="gas-fee-label">Trading Fee</span>
+                <span class="text-white" id="gas-fee-text">FREE (Gasless)</span>
               </div>
             </div>
           </div>
@@ -258,13 +256,145 @@
         </button>
 
         <!-- Info Banner -->
-        <div class="mt-6 p-4 bg-blue-500/10 border border-blue-500/30 rounded-xl">
+        <div id="gasless-info-banner" class="mt-6 p-4 bg-blue-500/10 border border-blue-500/30 rounded-xl">
           <div class="flex items-start gap-3">
             <svg class="w-5 h-5 text-blue-400 mt-0.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"></path></svg>
             <div>
               <div class="font-semibold text-blue-400 mb-1">Gasless Trading</div>
               <div class="text-sm text-gray-400">
                 Trade without paying gas fees! Powered by B402 facilitator on BNB Chain.
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <!-- ================= HALAMAN DASHBOARD (dari dashboard-page.txt) ================= -->
+    <div id="dashboard-page" class="max-w-7xl mx-auto pt-8 hidden">
+      <!-- Header -->
+      <div class="mb-8">
+        <h1 class="text-4xl font-bold bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent mb-3">
+          Dashboard
+        </h1>
+        <p class="text-gray-400">Your DeFi portfolio overview</p>
+      </div>
+    
+      <!-- Portfolio Overview -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <!-- Total Balance -->
+        <div class="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 backdrop-blur-xl p-6 rounded-2xl">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <div class="text-sm text-gray-400 mb-1">Total Balance</div>
+              <div class="text-3xl font-bold text-white" id="dash-total-balance">$0.00</div>
+            </div>
+            <div class="w-12 h-12 bg-yellow-500/20 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-yellow-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.25a2.25 2.25 0 0 1-2.25 2.25H5.25a2.25 2.25 0 0 1-2.25-2.25V12a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 12v.25Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15M12 12h.01"></path></svg>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 text-sm">
+            <svg class="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"></path></svg>
+            <span class="text-green-400 font-medium">+0.00%</span>
+            <span class="text-gray-400">24h</span>
+          </div>
+        </div>
+        <!-- Total Staked -->
+        <div class="bg-gradient-to-br from-green-500/20 to-emerald-500/20 border border-green-500/30 backdrop-blur-xl p-6 rounded-2xl">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <div class="text-sm text-gray-400 mb-1">Total Staked</div>
+              <div class="text-3xl font-bold text-white">$0.00</div>
+            </div>
+            <div class="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-green-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v20m-5-5H9.5a3.5 3.5 0 0 0 0-7H7"></path><path stroke-linecap="round" stroke-linejoin="round" d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 text-sm">
+            <span class="text-gray-400">Across</span>
+            <span class="text-white font-medium">0 pools</span>
+          </div>
+        </div>
+        <!-- Total Rewards -->
+        <div class="bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 backdrop-blur-xl p-6 rounded-2xl">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <div class="text-sm text-gray-400 mb-1">Total Rewards</div>
+              <div class="text-3xl font-bold text-white">$0.00</div>
+            </div>
+            <div class="w-12 h-12 bg-purple-500/20 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-purple-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0 1 12 21 8.25 8.25 0 0 1 6.038 7.047 8.287 8.287 0 0 0 9 9.601a8.983 8.983 0 0 1 3.361-3.867 8.21 8.21 0 0 0 3 2.48Z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 0 0 .495-7.468 3.75 3.75 0 0 0-7.463-1.112 3.75 3.75 0 0 0 1.11 7.463A3.75 3.75 0 0 0 12 18Z"></path></svg>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 text-sm">
+            <svg class="w-4 h-4 text-green-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"></path></svg>
+            <span class="text-green-400 font-medium">+0.00</span>
+            <span class="text-gray-400">pending</span>
+          </div>
+        </div>
+        <!-- Gas Saved -->
+        <div class="bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border border-blue-500/30 backdrop-blur-xl p-6 rounded-2xl">
+          <div class="flex justify-between items-start mb-4">
+            <div>
+              <div class="text-sm text-gray-400 mb-1">Gas Saved</div>
+              <div class="text-3xl font-bold text-white">$0.00</div>
+            </div>
+            <div class="w-12 h-12 bg-blue-500/20 rounded-xl flex items-center justify-center">
+              <svg class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"></path></svg>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 text-sm">
+            <span class="text-gray-400">Via gasless</span>
+          </div>
+        </div>
+      </div>
+    
+      <div class="grid lg:grid-cols-3 gap-6">
+        <!-- Recent Activity -->
+        <div class="lg:col-span-2">
+          <div class="bg-gray-900/50 border border-gray-800 backdrop-blur-xl p-6 rounded-2xl">
+            <h3 class="text-xl font-bold text-white mb-6">Recent Activity</h3>
+            <div id="activity-list" class="space-y-4">
+              <div id="no-activity" class="text-center py-8">
+                <p class="text-gray-400">No recent transactions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Quick Stats -->
+        <div class="space-y-6">
+          <div class="bg-gray-900/50 border border-gray-800 backdrop-blur-xl p-6 rounded-2xl">
+            <h3 class="text-xl font-bold text-white mb-6">Platform Stats</h3>
+            <div class="space-y-4">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-400">Total TVL</span>
+                <span class="font-bold text-white">$343.5M</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-400">24h Volume</span>
+                <span class="font-bold text-white">$2.4B</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-400">Active Users</span>
+                <span class="font-bold text-white">145,234</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-400">Total Pools</span>
+                <span class="font-bold text-white">247</span>
+              </div>
+            </div>
+          </div>
+    
+          <div class="bg-gradient-to-br from-yellow-500/20 to-orange-500/20 border border-yellow-500/30 backdrop-blur-xl p-6 rounded-2xl">
+            <div class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-yellow-400 mt-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"></path></svg>
+              <div>
+                <h4 class="font-bold text-white mb-2">Gasless Trading</h4>
+                <p class="text-sm text-gray-300">
+                  Save on gas fees with our B402 facilitator integration. Trade freely without worrying about transaction costs!
+                </p>
               </div>
             </div>
           </div>
@@ -298,8 +428,9 @@
   <!-- ====================================================== -->
   <div id="token-modal" class="fixed inset-0 z-[100] flex items-center justify-center p-4 modal-backdrop hidden">
     <div id="token-modal-content" class="modal bg-gray-900 border border-gray-800 text-white max-w-md w-full rounded-2xl shadow-2xl">
-      <div class="p-6 border-b border-gray-800">
+      <div class="p-6 border-b border-gray-800 flex justify-between items-center">
         <h2 class="text-xl font-bold">Select a Token</h2>
+        <button id="close-modal-button" class="text-gray-400 hover:text-white text-3xl">&times;</button>
       </div>
       <div class="p-6 space-y-4">
         <!-- Search Bar -->
@@ -326,14 +457,17 @@
     document.addEventListener('DOMContentLoaded', () => {
 
       // --- KONFIGURASI APLIKASI ---
-      // Menggunakan konfigurasi B402 dari skrip POOP Anda
+
+      // Kunci API 0x yang Anda berikan
+      const YOUR_0X_API_KEY = '55ca497d-dd3a-4d26-bb99-f65fc929e5a6';
+
       const CONFIG = {
         rpc: 'https://bsc-rpc.publicnode.com/',
         chainId: 56, 
         chainHex: '0x38', 
         chainName: 'BSC',
-        // PENTING: Ganti dengan URL backend B402 Anda yang SEBENARNYA
-        // Ini adalah contoh dari skrip Anda sebelumnya.
+        // PENTING: Ini adalah backend B402 hipotetis untuk DEX Aggregator.
+        // Anda harus membangun backend ini. URL dari skrip POOP adalah contoh.
         backendUrl: 'https://api.poopx402.site', 
         
         // Alamat Kontrak B402 (dari skrip POOP)
@@ -351,19 +485,18 @@
           'BTCB': { address: '0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c', symbol: 'Bitcoin BEP20', logo: '₿', decimals: 18 },
         },
         
-        // 1inch Aggregator API (Router v5 di BNB Chain)
-        aggregatorApiUrl: 'https://api.1inch.dev/swap/v6.0/56', // 56 = BNB Chain ID
-        // PENTING: Anda memerlukan KUNCI API 1inch untuk penggunaan produksi
-        aggregatorApiKey: 'GANTI_DENGAN_KUNCI_API_1INCH_ANDA' 
+        // 0x Aggregator API (Pengganti 1inch)
+        zeroExApiUrl: 'https://bsc.api.0x.org/swap/v1/quote', // 56 = BNB Chain ID
+        zeroExApiKey: YOUR_0X_API_KEY
       };
 
       const ERC20_ABI = [ 'function balanceOf(address) view returns (uint256)', 'function decimals() view returns (uint8)', 'function approve(address,uint256) returns (bool)', 'function allowance(address,address) view returns (uint256)' ];
       
       // --- Status Aplikasi (State) ---
       let provider, signer, userAddress;
-      let tokenFrom = CONFIG.tokens['BNB'];
+      let tokenFrom = CONFIG.tokens['USDT']; // Mulai dengan USDT untuk demo gasless
       let tokenTo = CONFIG.tokens['CAKE'];
-      let currentQuote = null; // Menyimpan quote terakhir dari 1inch
+      let currentQuote = null; // Menyimpan quote terakhir dari 0x
       let currentTokenModal = null; // 'from' or 'to'
       let isSwapping = false;
       let quoteDebounceTimer;
@@ -372,6 +505,15 @@
       const connectWalletButton = document.getElementById('connect-wallet-button');
       const connectWalletText = document.getElementById('connect-wallet-text');
       
+      // Halaman
+      const swapPage = document.getElementById('swap-page');
+      const dashboardPage = document.getElementById('dashboard-page');
+      
+      // Tombol Navigasi
+      const navSwapButton = document.getElementById('nav-swap-button');
+      const navDashboardButton = document.getElementById('nav-dashboard-button');
+
+      // Swap Box
       const fromTokenButton = document.getElementById('from-token-button');
       const toTokenButton = document.getElementById('to-token-button');
       const fromAmountInput = document.getElementById('from-amount-input');
@@ -382,47 +524,82 @@
       const toValueText = document.getElementById('to-value-text');
       const swapTokensButton = document.getElementById('swap-tokens-button');
       
+      // Info Harga
       const priceInfoContainer = document.getElementById('price-info-container');
       const priceRateText = document.getElementById('price-rate-text');
-      const priceImpactText = document.getElementById('price-impact-text');
       const priceMinReceivedText = document.getElementById('price-min-received-text');
+      const gasFeeLabel = document.getElementById('gas-fee-label');
+      const gasFeeText = document.getElementById('gas-fee-text');
+      const gaslessBadge = document.getElementById('gasless-badge');
+      const gaslessInfoBanner = document.getElementById('gasless-info-banner');
       
       const mainActionButton = document.getElementById('main-action-button');
       
+      // Modal
       const tokenModal = document.getElementById('token-modal');
       const tokenModalContent = document.getElementById('token-modal-content');
       const tokenSearchInput = document.getElementById('token-search-input');
       const tokenList = document.getElementById('token-list');
+      const closeModalButton = document.getElementById('close-modal-button');
+
+      // Dashboard
+      const dashTotalBalance = document.getElementById('dash-total-balance');
+      const activityList = document.getElementById('activity-list');
+      const noActivity = document.getElementById('no-activity');
 
       // --- FUNGSI UTAMA ---
 
-      /**
-       * Inisialisasi aplikasi, update UI token awal, dan pasang event listener.
-       */
       function initApp() {
         updateTokenUI('from', tokenFrom);
         updateTokenUI('to', tokenTo);
+        updateGaslessUI(tokenFrom.symbol !== 'BNB'); // Update UI gasless di awal
 
+        // Event Listeners
         connectWalletButton.addEventListener('click', connectWallet);
         mainActionButton.addEventListener('click', onMainActionClick);
         
+        // Navigasi
+        navSwapButton.addEventListener('click', () => showPage('swap'));
+        navDashboardButton.addEventListener('click', () => showPage('dashboard'));
+        
+        // Swap Box
         fromTokenButton.addEventListener('click', () => openTokenModal('from'));
         toTokenButton.addEventListener('click', () => openTokenModal('to'));
         swapTokensButton.addEventListener('click', swapTokenUI);
 
-        // Menutup modal jika klik di luar
+        // Modal
+        closeModalButton.addEventListener('click', closeModal);
         tokenModal.addEventListener('click', (e) => {
           if (e.target === tokenModal) closeModal();
         });
 
-        // Event listener untuk input
+        // Input
         fromAmountInput.addEventListener('input', () => debounceGetQuote(true));
-        toAmountInput.addEventListener('input', () => debounceGetQuote(false));
+        // toAmountInput dinonaktifkan, hanya 'From' yang bisa diinput
       }
-
-      /**
-       * Terhubung ke wallet (MetaMask)
-       */
+      
+      function showPage(pageName) {
+        if (pageName === 'swap') {
+          swapPage.classList.remove('hidden');
+          dashboardPage.classList.add('hidden');
+          
+          navSwapButton.classList.add('bg-gradient-to-r', 'from-yellow-400', 'to-orange-500', 'text-white', 'shadow-lg');
+          navSwapButton.classList.remove('text-gray-300', 'hover:text-white', 'hover:bg-white/10');
+          
+          navDashboardButton.classList.add('text-gray-300', 'hover:text-white', 'hover:bg-white/10');
+          navDashboardButton.classList.remove('bg-gradient-to-r', 'from-yellow-400', 'to-orange-500', 'text-white', 'shadow-lg');
+        } else {
+          swapPage.classList.add('hidden');
+          dashboardPage.classList.remove('hidden');
+          
+          navDashboardButton.classList.add('bg-gradient-to-r', 'from-yellow-400', 'to-orange-500', 'text-white', 'shadow-lg');
+          navDashboardButton.classList.remove('text-gray-300', 'hover:text-white', 'hover:bg-white/10');
+          
+          navSwapButton.classList.add('text-gray-300', 'hover:text-white', 'hover:bg-white/10');
+          navSwapButton.classList.remove('bg-gradient-to-r', 'from-yellow-400', 'to-orange-500', 'text-white', 'shadow-lg');
+        }
+      }
+      
       async function connectWallet() {
         if (!window.ethereum) {
           alert('Please install MetaMask!');
@@ -433,31 +610,46 @@
           updateButtonState(connectWalletButton, 'Connecting...', true);
           updateButtonState(mainActionButton, 'Connecting...', true);
 
-          // Minta ganti/tambah jaringan BNB Chain
-          await window.ethereum.request({
-            method: 'wallet_addEthereumChain',
-            params: [{
-              chainId: CONFIG.chainHex,
-              chainName: 'BNB Smart Chain',
-              nativeCurrency: { name: 'BNB', symbol: 'BNB', decimals: 18 },
-              rpcUrls: [CONFIG.rpc],
-              blockExplorerUrls: ['https://bscscan.com']
-            }]
-          });
+          // 1. Minta ganti/tambah jaringan BNB Chain
+          try {
+            await window.ethereum.request({
+              method: 'wallet_switchEthereumChain',
+              params: [{ chainId: CONFIG.chainHex }],
+            });
+          } catch (switchError) {
+            if (switchError.code === 4902) {
+              await window.ethereum.request({
+                method: 'wallet_addEthereumChain',
+                params: [{
+                  chainId: CONFIG.chainHex,
+                  chainName: 'BNB Smart Chain',
+                  nativeCurrency: { name: 'BNB', symbol: 'BNB', decimals: 18 },
+                  rpcUrls: [CONFIG.rpc],
+                  blockExplorerUrls: ['https://bscscan.com']
+                }]
+              });
+            } else {
+              throw switchError;
+            }
+          }
           
-          // Minta akun
+          // 2. Minta akun
           provider = new ethers.BrowserProvider(window.ethereum);
           await provider.send("eth_requestAccounts", []);
           signer = await provider.getSigner();
           userAddress = await signer.getAddress();
 
-          // Update UI
+          // 3. Update UI
           const truncatedAddress = `${userAddress.slice(0, 6)}...${userAddress.slice(-4)}`;
           connectWalletText.textContent = truncatedAddress;
+          connectWalletButton.disabled = true; 
+          
           mainActionButton.textContent = 'Enter an amount';
           mainActionButton.disabled = true;
           
           console.log('Wallet Connected:', userAddress);
+          
+          // 4. Muat Saldo
           loadAllBalances();
 
         } catch (error) {
@@ -468,9 +660,8 @@
         }
       }
       
-      /**
-       * Fungsi utama yang dipanggil saat tombol "Swap" / "Approve" / "Connect" diklik
-       */
+      // --- LOGIKA SWAP (NORMAL vs GASLESS) ---
+      
       async function onMainActionClick() {
         if (!signer) {
           connectWallet();
@@ -479,55 +670,58 @@
         
         if (isSwapping || !currentQuote) return;
 
-        // 1. Cek jika perlu Approval
-        // Kita approve B402 Relayer Contract, bukan 1inch Router
-        // Ini karena B402 Relayer yang akan mengambil dana kita.
-        const amount = ethers.parseUnits(fromAmountInput.value, tokenFrom.decimals);
-        const allowance = await checkAllowance(tokenFrom.address, CONFIG.relayer);
-        
-        if (allowance < amount) {
-          await approveToken(tokenFrom.address, CONFIG.relayer, amount);
+        // PERBEDAAN LOGIKA: BNB (Normal) vs ERC20 (Gasless B402)
+        if (tokenFrom.symbol === 'BNB') {
+          // --- Alur Swap Normal (Bayar Gas) ---
+          await executeNormalSwap();
         } else {
-          // 2. Jika sudah di-approve, lakukan Gasless Swap
-          await executeGaslessSwap();
+          // --- Alur Swap Gasless B402 (ERC-20) ---
+          const amount = ethers.parseUnits(fromAmountInput.value, tokenFrom.decimals);
+          // Cek allowance untuk B402 Relayer
+          const allowance = await checkAllowance(tokenFrom.address, CONFIG.relayer);
+          
+          if (allowance < amount) {
+            await approveToken(tokenFrom.address, CONFIG.relayer, ethers.MaxUint256); // Setujui Max
+          } else {
+            await executeGaslessSwap();
+          }
         }
       }
 
       /**
-       * Memeriksa allowance untuk token
+       * Eksekusi Swap NORMAL (untuk BNB)
        */
-      async function checkAllowance(tokenAddress, spenderAddress) {
-        if (tokenFrom.symbol === 'BNB') return ethers.MaxUint256; // BNB tidak perlu approval
+      async function executeNormalSwap() {
+        updateButtonState(mainActionButton, 'Confirm in wallet...', true);
+        isSwapping = true;
         try {
-          const tokenContract = new ethers.Contract(tokenAddress, ERC20_ABI, provider);
-          const allowance = await tokenContract.allowance(userAddress, spenderAddress);
-          return allowance;
-        } catch (e) {
-          console.error("Failed to check allowance:", e);
-          return 0n;
-        }
-      }
-
-      /**
-       * Meminta approval token
-       */
-      async function approveToken(tokenAddress, spenderAddress, amount) {
-        updateButtonState(mainActionButton, `Approving ${tokenFrom.symbol}...`, true);
-        try {
-          const tokenContract = new ethers.Contract(tokenAddress, ERC20_ABI, signer);
-          const tx = await tokenContract.approve(spenderAddress, amount);
+          // Data transaksi diambil dari quote 0x
+          const tx = await signer.sendTransaction({
+            to: currentQuote.to,
+            data: currentQuote.data,
+            value: currentQuote.value // Ini adalah jumlah BNB yang dikirim
+          });
+          
+          updateButtonState(mainActionButton, 'Swapping...', true);
           await tx.wait();
-          console.log('Approval successful:', tx.hash);
-          updateButtonState(mainActionButton, 'Swap', false); // Sekarang tombolnya jadi Swap
+          
+          alert(`Swap successful! Tx: ${tx.hash}`);
+          addActivityLog(tx.hash, `${tokenFrom.symbol} for ${tokenTo.symbol}`, fromAmountInput.value);
+          
+          resetQuoteUI();
+          loadAllBalances();
+          
         } catch (error) {
-          console.error("Approval failed:", error);
-          alert('Approval failed. See console for details.');
-          updateButtonState(mainActionButton, `Approve ${tokenFrom.symbol}`, false);
+          console.error("Normal swap failed:", error);
+          alert('Swap failed: ' + error.message);
+        } finally {
+          isSwapping = false;
+          updateButtonState(mainActionButton, 'Enter an amount', true);
         }
       }
 
       /**
-       * Menjalankan proses swap gasless B402
+       * Eksekusi Swap GASLESS (untuk ERC-20)
        */
       async function executeGaslessSwap() {
         updateButtonState(mainActionButton, 'Signing (0 Gas)...', true);
@@ -536,9 +730,7 @@
         try {
           const amountIn = ethers.parseUnits(fromAmountInput.value, tokenFrom.decimals);
 
-          // 1. Siapkan Otorisasi B402 (dari POOP script)
-          // Kita mengizinkan B402 Relayer untuk mengambil dana kita dan mengirimkannya ke Server Wallet
-          // (Backend kemudian yang akan mengeksekusi swap)
+          // 1. Siapkan Otorisasi B402
           const nonce = ethers.hexlify(ethers.randomBytes(32));
           const validAfter = Math.floor(Date.now() / 1000);
           const validBefore = validAfter + 600; // 10 menit
@@ -546,7 +738,7 @@
           const types = { TransferWithAuthorization: [ { name: 'from', type: 'address' }, { name: 'to', type: 'address' }, { name: 'value', type: 'uint256' }, { name: 'validAfter', type: 'uint256' }, { name: 'validBefore', type: 'uint256' }, { name: 'nonce', type: 'bytes32' } ] };
           const value = { 
             from: userAddress, 
-            to: CONFIG.serverWallet, // Kita bayar ke server wallet
+            to: CONFIG.serverWallet, // Bayar ke server wallet
             value: amountIn.toString(), 
             validAfter, 
             validBefore, 
@@ -559,15 +751,16 @@
           updateButtonState(mainActionButton, 'Swapping (Gasless)...', true);
 
           // 3. Kirim ke Backend Fasilitator
-          // Backend harus didesain untuk menerima 'authorization' DAN 'swapData'
-          const response = await fetch(`${CONFIG.backendUrl}/gasless-swap`, { // PENTING: Endpoint ini hipotetis
+          const response = await fetch(`${CONFIG.backendUrl}/gasless-swap`, { // PENTING: Endpoint ini harus Anda buat
               method: 'POST',
               headers: { 'Content-Type': 'application/json' },
               body: JSON.stringify({ 
                   authorization: value, 
                   signature, 
                   userAddress,
-                  swapTx: currentQuote.tx // Mengirim data transaksi 1inch ke backend
+                  swapData: currentQuote.data,    // Calldata dari 0x
+                  swapTarget: currentQuote.to,  // Kontrak router 0x
+                  swapValue: currentQuote.value // (Harusnya 0 untuk ERC-20 swap)
               })
           });
 
@@ -579,77 +772,102 @@
 
           // 4. Sukses!
           alert(`Swap successful (Gasless)! Tx: ${result.txHash}`);
-          console.log('Swap TX:', result.txHash);
-          
-          // Reset UI
-          fromAmountInput.value = '';
-          toAmountInput.value = '';
-          priceInfoContainer.classList.add('hidden');
-          updateButtonState(mainActionButton, 'Swap', false);
-          loadAllBalances();
+          addActivityLog(result.txHash, `${tokenFrom.symbol} for ${tokenTo.symbol}`, fromAmountInput.value, true);
 
+          resetQuoteUI();
+          loadAllBalances();
+          
         } catch (error) {
           console.error("Gasless swap failed:", error);
           alert('Swap failed: ' + error.message);
         } finally {
           isSwapping = false;
-          updateButtonState(mainActionButton, 'Swap', false);
+          updateButtonState(mainActionButton, 'Enter an amount', true);
         }
       }
 
-      /**
-       * Mendapatkan quote dari 1inch API
-       */
-      async function getQuote(isFromInput) {
-        if (!signer) return;
+      async function checkAllowance(tokenAddress, spenderAddress) {
+        if (tokenFrom.symbol === 'BNB') return ethers.MaxUint256; 
+        try {
+          const tokenContract = new ethers.Contract(tokenAddress, ERC20_ABI, provider);
+          const allowance = await tokenContract.allowance(userAddress, spenderAddress);
+          return allowance;
+        } catch (e) {
+          console.error("Failed to check allowance:", e);
+          return 0n;
+        }
+      }
 
-        const amount = isFromInput ? fromAmountInput.value : toAmountInput.value;
+      async function approveToken(tokenAddress, spenderAddress, amount) {
+        updateButtonState(mainActionButton, `Approving ${tokenFrom.symbol}...`, true);
+        try {
+          const tokenContract = new ethers.Contract(tokenAddress, ERC20_ABI, signer);
+          const tx = await tokenContract.approve(spenderAddress, amount);
+          await tx.wait();
+          console.log('Approval successful:', tx.hash);
+          updateButtonState(mainActionButton, 'Swap', false); 
+        } catch (error) {
+          console.error("Approval failed:", error);
+          alert('Approval failed. See console for details.');
+          updateButtonState(mainActionButton, `Approve ${tokenFrom.symbol}`, false);
+        }
+      }
+
+      // --- PANGGILAN API 0x ---
+      async function getQuote(isFromInput) {
+        if (!signer || !isFromInput || !fromAmountInput.value) { // Hanya izinkan input 'From'
+          resetQuoteUI();
+          return;
+        }
+
+        const amount = fromAmountInput.value;
         if (!amount || parseFloat(amount) <= 0) {
           resetQuoteUI();
           return;
         }
 
-        const decimals = isFromInput ? tokenFrom.decimals : tokenTo.decimals;
+        const decimals = tokenFrom.decimals;
         const amountInWei = ethers.parseUnits(amount, decimals);
 
         const fromAddr = tokenFrom.address;
         const toAddr = tokenTo.address;
 
-        // Tampilkan loading di tombol
         updateButtonState(mainActionButton, 'Getting route...', true);
         priceInfoContainer.classList.add('hidden');
 
         try {
-          // Panggil 1inch API
+          const headers = {
+            '0x-api-key': CONFIG.zeroExApiKey,
+            'Accept': 'application/json'
+          };
+
           const queryParams = new URLSearchParams({
-            src: fromAddr,
-            dst: toAddr,
-            amount: amountInWei.toString(),
-            from: userAddress,
-            slippage: 1, // 1% slippage
-            // 'includeGas': true // B402 menangani gas, jadi ini opsional
+            buyToken: toAddr,
+            sellToken: fromAddr,
+            sellAmount: amountInWei.toString(),
+            takerAddress: userAddress, // Diperlukan untuk swap gasless
+            // 'slippagePercentage': 0.01, // 1%
           });
 
-          const response = await fetch(`${CONFIG.aggregatorApiUrl}/swap?${queryParams.toString()}`, {
-            headers: {
-              'Authorization': `Bearer ${CONFIG.aggregatorApiKey}`
-            }
+          const response = await fetch(`${CONFIG.zeroExApiUrl}?${queryParams.toString()}`, {
+            method: 'GET',
+            headers: headers
           });
 
           if (!response.ok) {
             const errorData = await response.json();
-            throw new Error(errorData.description || 'Failed to get quote');
+            console.error('0x API Error:', errorData);
+            throw new Error(errorData.validationErrors ? errorData.validationErrors[0].description : (errorData.reason || 'Failed to get quote'));
           }
 
           const quote = await response.json();
           currentQuote = quote; // Simpan quote lengkap
 
           // Update UI
-          const amountOut = ethers.formatUnits(quote.dstAmount, tokenTo.decimals);
+          const amountOut = ethers.formatUnits(quote.buyAmount, tokenTo.decimals);
           toAmountInput.value = parseFloat(amountOut).toFixed(6);
           updatePriceInfo(quote);
           
-          // Cek Allowance & Update Tombol
           await checkAllowanceAndUpdateButton(amountInWei);
 
         } catch (error) {
@@ -659,9 +877,6 @@
         }
       }
 
-      /**
-       * Debouncer untuk getQuote agar tidak memanggil API pada setiap ketikan
-       */
       function debounceGetQuote(isFromInput) {
         clearTimeout(quoteDebounceTimer);
         quoteDebounceTimer = setTimeout(() => {
@@ -669,44 +884,40 @@
         }, 500); // 500ms delay
       }
 
-      /**
-       * Memeriksa allowance dan memperbarui tombol utama
-       */
       async function checkAllowanceAndUpdateButton(amountInWei) {
+        // Jika BNB, langsung "Swap"
         if (tokenFrom.symbol === 'BNB') {
           updateButtonState(mainActionButton, 'Swap', false);
           return;
         }
         
-        // Cek allowance untuk B402 Relayer
+        // Jika ERC-20, cek allowance untuk B402 Relayer
         const allowance = await checkAllowance(tokenFrom.address, CONFIG.relayer);
         if (allowance < amountInWei) {
           updateButtonState(mainActionButton, `Approve ${tokenFrom.symbol}`, false);
         } else {
-          updateButtonState(mainActionButton, 'Swap', false);
+          updateButtonState(mainActionButton, 'Swap (Gasless)', false);
         }
       }
 
       // --- FUNGSI UI HELPERS ---
 
       function resetQuoteUI() {
-        toAmountInput.value = '';
+        if (fromAmountInput.value === '') {
+          toAmountInput.value = '';
+        }
         priceInfoContainer.classList.add('hidden');
-        mainActionButton.textContent = 'Enter an amount';
-        mainActionButton.disabled = true;
+        if(signer) {
+          mainActionButton.textContent = 'Enter an amount';
+          mainActionButton.disabled = true;
+        }
       }
       
       function updatePriceInfo(quote) {
-        const amountIn = parseFloat(fromAmountInput.value);
-        const amountOut = parseFloat(ethers.formatUnits(quote.dstAmount, tokenTo.decimals));
-        
-        const rate = amountOut / amountIn;
+        const rate = parseFloat(quote.price);
         priceRateText.textContent = `1 ${tokenFrom.symbol} = ${rate.toFixed(6)} ${tokenTo.symbol}`;
         
-        // 1inch API v6 tidak selalu menyediakan priceImpact. Kita simulasikan.
-        priceImpactText.textContent = "< 0.01%"; 
-        
-        const minReceived = ethers.formatUnits(quote.dstAmount, tokenTo.decimals); // Sederhana
+        const minReceived = ethers.formatUnits(quote.buyAmount, tokenTo.decimals); 
         priceMinReceivedText.textContent = `${parseFloat(minReceived).toFixed(6)} ${tokenTo.symbol}`;
         
         priceInfoContainer.classList.remove('hidden');
@@ -729,7 +940,27 @@
         updateTokenUI('from', tokenFrom);
         updateTokenUI('to', tokenTo);
         loadAllBalances();
-        debounceGetQuote(true); // Ambil quote baru
+        updateGaslessUI(tokenFrom.symbol !== 'BNB');
+        
+        if(fromAmountInput.value) {
+          debounceGetQuote(true); 
+        } else {
+          resetQuoteUI();
+        }
+      }
+
+      function updateGaslessUI(isGasless) {
+        if (isGasless) {
+          gasFeeLabel.textContent = "Trading Fee";
+          gasFeeText.textContent = "FREE (Gasless)";
+          gaslessBadge.classList.remove('hidden');
+          gaslessInfoBanner.classList.remove('hidden');
+        } else {
+          gasFeeLabel.textContent = "Gas Fee (Est.)";
+          gasFeeText.textContent = "≈ 0.001 BNB"; // Placeholder
+          gaslessBadge.classList.add('hidden');
+          gaslessInfoBanner.classList.add('hidden');
+        }
       }
 
       function updateTokenUI(direction, token) {
@@ -740,7 +971,6 @@
             <div class="text-left">
               <div class="font-bold text-lg">${token.symbol}</div>
             </div>
-            <!-- Chevron Down -->
             <svg class="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke-width="3" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"></path></svg>
           </div>
         `;
@@ -748,8 +978,21 @@
 
       async function loadAllBalances() {
         if (!signer) return;
-        loadBalance(tokenFrom, 'from');
-        loadBalance(tokenTo, 'to');
+        let totalBalance = 0;
+        
+        // Simulasikan harga untuk total balance (idealnya pakai API harga)
+        const prices = { 'BNB': 300, 'CAKE': 2.5, 'USDT': 1, 'USDC': 1, 'BUSD': 1, 'ETH': 1800, 'BTCB': 30000 };
+
+        await Promise.all([
+          loadBalance(tokenFrom, 'from').then(val => {
+            totalBalance += (prices[tokenFrom.symbol] || 0) * val;
+          }),
+          loadBalance(tokenTo, 'to').then(val => {
+            totalBalance += (prices[tokenTo.symbol] || 0) * val;
+          })
+        ]);
+
+        dashTotalBalance.textContent = `$${totalBalance.toFixed(2)}`;
       }
 
       async function loadBalance(token, direction) {
@@ -762,16 +1005,38 @@
             const tokenContract = new ethers.Contract(token.address, ERC20_ABI, provider);
             balance = await tokenContract.balanceOf(userAddress);
           }
-          const formattedBalance = parseFloat(ethers.formatUnits(balance, token.decimals)).toFixed(4);
-          balanceTextEl.textContent = `Balance: ${formattedBalance}`;
+          const formattedBalance = ethers.formatUnits(balance, token.decimals);
+          balanceTextEl.textContent = `Balance: ${parseFloat(formattedBalance).toFixed(4)}`;
+          return parseFloat(formattedBalance);
         } catch (e) {
           console.error(`Failed to load ${token.symbol} balance:`, e);
           balanceTextEl.textContent = `Balance: Error`;
+          return 0;
         }
+      }
+      
+      function addActivityLog(txHash, description, amount, isGasless = false) {
+        noActivity.classList.add('hidden');
+        
+        const shortHash = `${txHash.slice(0, 6)}...${txHash.slice(-4)}`;
+        const logEntry = document.createElement('div');
+        logEntry.className = "flex items-center gap-4 p-4 bg-gray-800/50 rounded-xl";
+        logEntry.innerHTML = `
+          <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+            <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5 19.5 4.5M8.25 4.5H19.5M19.5 4.5v11.25"></path></svg>
+          </div>
+          <div class="flex-1">
+            <div class="font-semibold text-white">Swap ${amount} ${description}</div>
+            <a href="https://bscscan.com/tx/${txHash}" target="_blank" class="text-sm text-yellow-400 hover:underline">${shortHash}</a>
+          </div>
+          <div class="text-right">
+            ${isGasless ? '<span class="text-sm text-green-400">Success (Gasless)</span>' : '<span class="text-sm text-green-400">Success</span>'}
+          </div>
+        `;
+        activityList.prepend(logEntry); // Tambahkan di atas
       }
 
       // --- Logika Modal Token ---
-
       function openTokenModal(direction) {
         currentTokenModal = direction;
         populateTokenList();
@@ -787,7 +1052,7 @@
 
       function populateTokenList() {
         const searchTerm = tokenSearchInput.value.toLowerCase();
-        tokenList.innerHTML = ''; // Kosongkan list
+        tokenList.innerHTML = ''; 
         
         Object.values(CONFIG.tokens)
           .filter(token => 
@@ -795,7 +1060,6 @@
             token.name.toLowerCase().includes(searchTerm)
           )
           .forEach(token => {
-            // Jangan tampilkan token yang sudah dipilih di sisi lain
             const isSelected = (currentTokenModal === 'from' && token.symbol === tokenTo.symbol) ||
                                (currentTokenModal === 'to' && token.symbol === tokenFrom.symbol);
 
@@ -820,13 +1084,14 @@
           tokenFrom = token;
           updateTokenUI('from', token);
           loadBalance(token, 'from');
+          updateGaslessUI(token.symbol !== 'BNB');
         } else {
           tokenTo = token;
           updateTokenUI('to', token);
           loadBalance(token, 'to');
         }
         closeModal();
-        debounceGetQuote(true); // Ambil quote baru
+        debounceGetQuote(true); 
       }
       
       tokenSearchInput.addEventListener('input', populateTokenList);
